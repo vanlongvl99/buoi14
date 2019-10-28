@@ -55,12 +55,13 @@ if __name__ == "__main__":
     addWord(root, "then")
     print(findWord(root, "the"))
     removeWord(root,"then",0,4)
-    print(findWord(root,"the"))  # ???theo mình nghĩ kết quả phải trả về True???
+    print(findWord(root,"the"))  # ???theo em nghĩ kết quả phải trả về True???
     print(findWord(root, "bigo"))
-    print(findWord(root,"then")) 
-
-    # printWord(root,"bigo")  #lệnh này k in được, nếu bỏ dòng 42 (root.child[ch] = None) thì in ra 2 lần bigo
+    # print(findWord(root,"then"))  # ??? làm thế nào để kiểm tra mình đã xóa thành công
+    # printWord(root,"bigo")  #???lệnh này k in được, nếu bỏ dòng 42 (root.child[ch] = None) thì in ra 2 lần bigo
     # printWord(root, "the  ")  #lệnh này tương tự.
+
+    # em nghĩ phần cài đặt hàm findWord vs hàm remove của e bị sai
 
 
         
