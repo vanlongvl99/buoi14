@@ -37,8 +37,8 @@ def removeWord(root, s, level, len):
         return False
     ch = s[level]
     flag = removeWord(root.child[ch], s, level+1, len)
-    if flag == True and isWord(root.child[ch]) == False and isEmpty(root.child[ch]):
-        del root.child[ch]
+    if flag == True and isWord(root.child[ch]) == False and isEmpty(root.child[ch]) == True: #hình như khúc này bị lỗi
+        del root.child[ch] 
         root.child[ch] = None
     return flag
 
@@ -46,7 +46,7 @@ def printWord(root, s):
     if isWord(root):
         print(s)
     for ch in root.child:
-        printWord(root.child[ch], s + ch)
+        printWord(root.child[ch], s + ch)  
 
 if __name__ == "__main__":
     root = node()
@@ -55,10 +55,10 @@ if __name__ == "__main__":
     addWord(root, "then")
     print(findWord(root, "the"))
     removeWord(root,"then",0,4)
-    print(findWord(root,"the"))  # ???theo em nghĩ kết quả phải trả về True???
+    print(findWord(root,"the"))  # câu hỏi 1: ???theo em nghĩ kết quả phải trả về True, hình như cài đặt sai???
     print(findWord(root, "bigo"))
-    # print(findWord(root,"then"))  # ??? làm thế nào để kiểm tra mình đã xóa thành công
-    # printWord(root,"bigo")  #???lệnh này k in được, nếu bỏ dòng 42 (root.child[ch] = None) thì in ra 2 lần bigo
+    # print(findWord(root,"then"))  #câu hỏi 2:  ??? làm thế nào để kiểm tra mình đã xóa thành công
+    # printWord(root,"")  #???câu hỏi 3: e k in được, nếu bỏ dòng 42(root.child[ch] = None) thì in được chuỗi bigo.
     # printWord(root, "the  ")  #lệnh này tương tự.
 
     # em nghĩ phần cài đặt hàm findWord vs hàm remove của e bị sai
